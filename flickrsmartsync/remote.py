@@ -152,7 +152,7 @@ class Remote(object):
 
             for current_set in sets['photosets']['photoset']:
                 # Make sure it's the one from backup format
-                desc = html_parser.unescape(current_set['description']['_content'])
+                desc = html_parser.unescape(current_set['title']['_content'])
                 desc = desc.encode('utf-8') if isinstance(desc, unicode) else desc
                 if desc:
                     self.photo_sets_map[desc] = current_set['id']
