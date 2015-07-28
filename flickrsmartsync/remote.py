@@ -108,6 +108,9 @@ class Remote(object):
 
                 for photo in photos_in_set['photoset']['photo']:
                     title = photo['title'].encode('utf-8')
+                    if not title:
+                        title = photo['id']
+
                     # add missing extension if not present (take a guess as api original_format argument not working)
                     split = title.split(".")
                     # assume valid file extension is less than or equal to 5 characters and not all digits
